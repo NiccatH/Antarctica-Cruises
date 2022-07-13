@@ -1,0 +1,88 @@
+.welcome {
+  color: $color-alice-blue;
+  text-shadow: $text-shadow;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-color: $color-tangaroa;
+
+  @include desktop-only {
+    background-image: url("../img/welcome-bg-desktop.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/welcome-bg-desktop@2x.jpg");
+    }
+  }
+
+  @include tablet-only {
+    background-image: url("../img/welcome-bg-tablet.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/welcome-bg-tablet@2x.jpg");
+    }
+  }
+
+  @include mobile-only {
+    background-image: url("../img/welcome-bg-mobile.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/welcome-bg-mobile@2x.jpg");
+    }
+  }
+
+  & h1 {
+    font-weight: 700;
+    font-size: 54px;
+    line-height: 66px;
+    margin-top: 0;
+    margin-bottom: 30px;
+
+    @include tablet-only {
+      font-size: 50px;
+      line-height: 61px;
+    }
+
+    @include mobile-only {
+      font-size: 36px;
+      line-height: 45px;
+      margin-bottom: 25px;
+    }
+  }
+
+  & p {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 0;
+    margin-bottom: 30px;
+
+    @include tablet-only {
+      font-size: 18px;
+      line-height: 22px;
+    }
+
+    @include mobile-only {
+      font-size: 16px;
+      line-height: 22px;
+      margin-bottom: 25px;
+    }
+  }
+}
+
+.welcome__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  @include desktop-only {
+    min-height: 650px;
+  }
+
+  @include tablet-only {
+    min-height: 538px;
+  }
+
+  @include mobile-only {
+    min-height: 500px;
+  }
+}

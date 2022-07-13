@@ -1,0 +1,13 @@
+.section-wrapper {
+  max-width: 1366px;
+  margin: 0 auto;
+  padding: 120px 103px;
+
+  @include tablet-only {
+    padding: 100px 45px;
+  }
+
+  @include mobile-only {
+    padding: 65px 15px;
+  }
+}

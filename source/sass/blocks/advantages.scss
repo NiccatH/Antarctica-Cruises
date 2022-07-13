@@ -1,0 +1,107 @@
+.advantages {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-color: $color-alice-blue;
+
+  @include desktop-only {
+    background-image: url("../img/advantages-bg-desktop.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/advantages-bg-desktop@2x.jpg");
+    }
+  }
+
+  @include tablet-only {
+    background-image: url("../img/advantages-bg-tablet.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/advantages-bg-tablet@2x.jpg");
+    }
+  }
+
+  @include mobile-only {
+    background-image: url("../img/advantages-bg-mobile.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/advantages-bg-mobile@2x.jpg");
+    }
+  }
+
+  & h2 {
+    margin-top: 0;
+    margin-bottom: 60px;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 42px;
+    text-align: center;
+
+    @include tablet-only {
+      font-size: 26px;
+      line-height: 39px;
+    }
+
+    @include mobile-only {
+      font-size: 24px;
+      line-height: 36px;
+    }
+  }
+
+  & ul {
+    @include list-style-none;
+
+    @include desktop-only {
+      gap: 40px;
+    }
+
+    @include from-tablet-to-max {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    @include tablet-only {
+      gap: 30px;
+    }
+
+    @include mobile-only {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+
+  & li {
+    padding: 30px 30px 50px 30px;
+    background-color: $color-alice-blue;
+
+    @include tablet-only {
+      padding: 25px 20px 25px 20px;
+    }
+
+    @include mobile-only {
+      padding-right: 15px;
+    }
+  }
+
+  & svg {
+    display: block;
+    margin-bottom: 25px;
+  }
+
+  & h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 27px;
+
+    @include tablet-only {
+      line-height: 25px;
+    }
+  }
+
+  & p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}

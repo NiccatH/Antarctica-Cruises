@@ -1,0 +1,102 @@
+.main-nav {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+
+  &--opened .main-nav__wrapper {
+    background-color: $color-tangaroa;
+
+    @include mobile-only {
+      position: absolute;
+      right: 0;
+      width: 89.1%;
+      padding: 20px 15px;
+      background-color: $color-alice-blue;
+      z-index: 1;
+    }
+  }
+
+  &--opened .main-nav__list {
+    @include mobile-only {
+      display: block;
+    }
+  }
+
+  &--opened .main-nav__icon {
+    @include mobile-only {
+      fill: $color-tangaroa;
+    }
+  }
+
+  &--opened .main-nav__toggle {
+    @include mobile-only {
+      top: 21px;
+      right: 15px;
+      background-image: url("../../img/svg/cross-icon.svg");
+      background-size: 13px 13px;
+    }
+  }
+
+  &--closed .main-nav__toggle {
+    @include mobile-only {
+      background-image: url("../../img/svg/burger-icon.svg");
+      background-size: 24px 12px;
+    }
+  }
+}
+
+.main-nav__wrapper {
+  @include desktop-only {
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+
+  @include tablet-only {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+
+  @include mobile-only {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+.main-nav__list {
+  @include tablet-only {
+    font-size: 14px;
+    line-height: 17px;
+  }
+
+  @include mobile-only {
+    display: none;
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  & a {
+    @include mobile-only {
+      color: $color-tangaroa;
+    }
+  }
+}
+
+.main-nav__toggle {
+  display: none;
+  width: 70px;
+  height: 22px;
+  padding: 0;
+  margin-left: auto;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: right center;
+
+  @include mobile-only {
+    display: block;
+    position: absolute;
+    right: 15px;
+  }
+}

@@ -35,19 +35,19 @@ const css = () => {
 const js = () => {
   return gulp.src(['source/js/main.js'])
       .pipe(webpackStream(webpackConfig))
-      .pipe(gulp.dest('build/js'))
+      .pipe(gulp.dest('build/js'));
 };
 
 const svgo = () => {
   return gulp.src('source/img/**/*.{svg}')
       .pipe(imagemin([
         imagemin.svgo({
-            plugins: [
-              {removeViewBox: false},
-              {removeRasterImages: true},
-              {removeUselessStrokeAndFill: false},
-            ]
-          }),
+          plugins: [
+            {removeViewBox: false},
+            {removeRasterImages: true},
+            {removeUselessStrokeAndFill: false}
+          ],
+        })
       ]))
       .pipe(gulp.dest('source/img'));
 };
@@ -74,7 +74,7 @@ const copy = () => {
     'source/**.html',
     'source/fonts/**',
     'source/img/**',
-    'source/favicon/**',
+    'source/favicon/**'
   ], {
     base: 'source',
   })
@@ -118,7 +118,6 @@ const build = gulp.series(clean, svgo, copy, css, sprite, js);
 const start = gulp.series(build, syncServer);
 
 // Optional tasks
-//---------------------------------
 
 // Используйте отличное от дефолтного значение root, если нужно обработать отдельную папку в img,
 // а не все изображения в img во всех папках.
@@ -127,17 +126,17 @@ const start = gulp.series(build, syncServer);
 // root = 'content/' - webp добавляются и обновляются только в source/img/content/
 
 const createWebp = () => {
-  const root = '';
+  const root = 'content/';
   return gulp.src(`source/img/${root}**/*.{png,jpg}`)
-    .pipe(webp({quality: 90}))
-    .pipe(gulp.dest(`source/img/${root}`));
+      .pipe(webp({quality: 90}))
+      .pipe(gulp.dest(`source/img/${root}`));
 };
 
 const optimizeImages = () => {
   return gulp.src('build/img/**/*.{png,jpg}')
       .pipe(imagemin([
         imagemin.optipng({optimizationLevel: 3}),
-        imagemin.mozjpeg({quality: 75, progressive: true}),
+        imagemin.mozjpeg({quality: 75, progressive: true})
       ]))
       .pipe(gulp.dest('build/img'));
 };

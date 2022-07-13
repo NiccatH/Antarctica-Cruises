@@ -1,0 +1,12 @@
+.page__body {
+  display: flex;
+  flex-direction: column;
+}
+
+.page__main {
+  flex: 1 0 auto;
+}
+
+.page__footer {
+  flex-shrink: 0;
+}
