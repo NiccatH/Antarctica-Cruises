@@ -1,0 +1,125 @@
+.form h3 {
+  margin-top: 0;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  color: $color-alice-blue;
+  text-align: left;
+
+  @include desktop-only {
+    margin-bottom: 29px;
+  }
+
+  @include max-tablet {
+    margin-bottom: 28px;
+  }
+
+  @include max-mobile {
+    margin-bottom: 30px;
+    line-height: 25px;
+    text-align: center;
+  }
+}
+
+.form__wrapper {
+  background-color: $color-tangaroa;
+  padding: 43px 50px 50px 50px;
+
+  @include max-mobile {
+    padding: 33px 30px 40px 30px;
+  }
+}
+
+.form__field {
+  margin-bottom: 20px;
+}
+
+.form__field input {
+  width: 100%;
+  padding: 11px 16px;
+  color: $color-tangaroa;
+  font-size: 14px;
+  line-height: 21px;
+  border: none;
+
+  &::placeholder {
+    font-size: 14px;
+    line-height: 21px;
+    color: $color-tangaroa-opacity;
+  }
+}
+
+.form__check {
+  margin-bottom: 31px;
+
+  @include max-mobile {
+    margin-bottom: 27px;
+  }
+}
+
+.form__check label {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: 5px;
+
+  @include max-mobile {
+    grid-template-columns: 20px 1fr;
+    gap: 8px;
+  }
+}
+
+.form__check input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  pointer-events: none;
+
+  &:checked + span::after {
+    content: url("../img/svg/approve-icon.svg");
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &:hover + span {
+    background-color: $background-solitude;
+    box-shadow: 0 0 0 2px $color-alice-blue;
+  }
+
+  &:focus + span {
+    background-color: $background-solitude;
+    box-shadow: 0 0 0 2px $color-alice-blue;
+    outline: auto;
+  }
+}
+
+.form__check input + span {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  background-color: $color-alice-blue;
+
+  @include max-mobile {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.form__check span {
+  font-size: 10px;
+  line-height: 13px;
+  color: $color-alice-blue;
+  align-self: center;
+
+  @include max-mobile {
+    line-height: 12px;
+  }
+}

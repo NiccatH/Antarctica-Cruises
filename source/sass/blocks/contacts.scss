@@ -1,0 +1,159 @@
+.contacts h3 {
+  margin-top: 0;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+
+  @include desktop-only {
+    margin-bottom: 30px;
+  }
+
+  @include max-tablet {
+    margin-bottom: 20px;
+  }
+
+  @include max-mobile {
+    margin-bottom: 13px;
+  }
+}
+
+.contacts ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  @include max-tablet {
+    padding-top: 10px;
+  }
+}
+
+.contacts li {
+  @include desktop-only {
+    margin-bottom: 5px;
+  }
+
+  @include max-tablet {
+    margin-bottom: 21px;
+  }
+
+  @include max-mobile {
+    margin-bottom: 15px;
+  }
+}
+
+.contacts a {
+  display: grid;
+  grid-template-columns: 18px 1fr;
+  gap: 10px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: $color-tangaroa;
+  border-radius: 10px;
+
+  @include desktop-only {
+    padding: 5px 0 10px 0;
+  }
+
+  @include max-tablet {
+    padding: 0;
+  }
+
+  @include max-mobile {
+    padding: 2.5px 0 5px 0;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $background-solitude;
+    box-shadow: 0 0 0 5px $background-solitude;
+
+
+    @include desktop-only {
+      box-shadow: 0 -5px 0 5px $background-solitude;
+    }
+
+    @include max-tablet {
+      box-shadow: 0 5px 0 5px $background-solitude;
+    }
+
+    @include max-mobile {
+      box-shadow: 0 2.5px 0 5px $background-solitude;
+    }
+  }
+
+  &:active {
+    color: $color-alice-blue;
+  }
+
+  &:hover svg,
+  &:focus svg {
+    fill: $color-tangaroa-opacity;
+  }
+
+  &:active svg {
+    fill: $color-alice-blue;
+  }
+}
+
+.contacts svg {
+  fill: $color-tangaroa;
+
+  @include max-tablet {
+    margin-top: 6px;
+  }
+}
+
+.contacts__wrapper {
+  display: grid;
+
+  @include desktop-only {
+    grid-template-columns: 560px 1fr;
+    gap: 100px;
+  }
+
+  @include max-tablet {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+  }
+
+  @include max-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: unset;
+  }
+}
+
+.contacts__map {
+  margin-top: 10px;
+
+  @include desktop-only {
+    align-self: center;
+  }
+
+  @include max-mobile {
+    margin: 0;
+  }
+}
+
+.contacts__content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  align-self: center;
+
+  @include desktop-only {
+    margin-top: 20px;
+  }
+
+  @include max-tablet {
+    margin-top: 27px;
+  }
+
+  @include max-mobile {
+    margin-top: 0;
+    margin-bottom: 17px;
+    align-self: unset;
+  }
+}

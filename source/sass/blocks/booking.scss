@@ -1,0 +1,123 @@
+.booking {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-color: $color-alice-blue;
+
+  @include desktop-only {
+    background-image: url("../img/form-bg-desktop.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/form-bg-desktop@2x.jpg");
+    }
+  }
+
+  @include max-tablet {
+    background-image: url("../img/form-bg-tablet.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/form-bg-tablet@2x.jpg");
+    }
+  }
+
+  @include max-mobile {
+    background-image: url("../img/form-bg-mobile.jpg");
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/form-bg-mobile@2x.jpg");
+    }
+  }
+}
+
+.booking h2 {
+  margin-top: 0;
+  font-weight: 700;
+
+  @include desktop-only {
+    margin-bottom: 8px;
+    font-size: 40px;
+    line-height: 60px;
+  }
+
+  @include max-tablet {
+    margin-bottom: 2px;
+    font-size: 34px;
+    line-height: 51px;
+  }
+
+  @include max-mobile {
+    margin-bottom: 15px;
+    font-size: 24px;
+    line-height: 31px;
+  }
+}
+
+.booking p {
+  margin-top: 0;
+  margin-bottom: 5px;
+  font-size: 18px;
+  line-height: 27px;
+
+  @include desktop-only {
+    margin-bottom: 10px;
+  }
+
+  @include max-tablet {
+    padding: 0 68px;
+  }
+
+  @include max-mobile {
+    padding: 0 10px;
+    font-size: 16px;
+    line-height: 22px;
+  }
+}
+
+.booking__wrapper {
+  @include desktop-only {
+    display: grid;
+    grid-template-columns: 1fr 403px;
+    column-gap: 70px;
+    row-gap: 30px;
+  }
+
+  @include max-tablet {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.booking__content-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  @include desktop-only {
+    align-self: center;
+  }
+
+  @include max-tablet {
+    padding-left: 140px;
+    padding-right: 140px;
+    margin-bottom: 48px;
+    text-align: center;
+  }
+
+  @include max-mobile {
+    padding: 0;
+    margin-bottom: 29px;
+  }
+}
+
+.booking__form {
+  align-self: center;
+  width: 100%;
+
+  @include max-tablet {
+    padding-left: 183px;
+    padding-right: 182px;
+  }
+
+  @include max-mobile {
+    padding: 0;
+  }
+}

@@ -1,127 +1,189 @@
 .catalog {
   color: $color-alice-blue;
+}
 
-  & h2 {
-    margin-bottom: 60px;
-    font-weight: 600;
+.catalog h2 {
+  margin-top: 0;
+  font-weight: 600;
+  color: $color-tangaroa;
+  text-align: center;
+
+  @include desktop-only {
+    margin-bottom: 49px;
     font-size: 28px;
     line-height: 42px;
-    color: $color-tangaroa;
-    text-align: center;
   }
 
-  & ul {
-    @include list-style-none;
-
-    @include desktop-only {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      padding-left: 15px;
-      padding-right: 15px;
-    }
-
-    @include from-tablet-to-max {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 30px;
-    }
-
-    @include mobile-only {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-    }
+  @include max-tablet {
+    margin-bottom: 48px;
+    font-size: 26px;
+    line-height: 39px;
   }
 
-  & li {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
+  @include max-mobile {
+    margin-bottom: 31px;
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+
+.catalog ul {
+  margin: 0;
+  padding: 0 15px 0 15px;
+  list-style-type: none;
+  display: grid;
+  gap: 30px;
+
+  @include desktop-only {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  & li:hover article {
-    z-index: 1;
+  @include max-tablet {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  & figure {
-    position: relative;
-    margin: 0;
-    grid-column: 1 / -1;
-    grid-row: 1 / -1;
-  }
-
-  & img {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-  }
-
-  & figcaption {
-    position: absolute;
-    bottom: 30px;
-    left: 30px;
-    right: 30px;
-    max-width: 260px;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 27px;
-    color: $color-alice-blue;
-  }
-
-  & article {
+  @include max-mobile {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    padding: 30px 25px 35px 25px;
-    grid-column: 1 / -1;
-    grid-row: 1 / -1;
-    background-color: $color-tangaroa;
-    color: $color-alice-blue;
-    box-sizing: border-box;
-    height: 100%;
+    padding-left: 10px;
+    padding-right: 10px;
+    gap: unset;
+  }
+}
 
-    @include from-tablet-to-desktop {
-      padding: 35px;
+.catalog li {
+  display: grid;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include desktop-only {
+    grid-template-columns: minmax(260px, 1fr);
+  }
+
+  @include max-tablet {
+    grid-template-columns: minmax(309px, 409px);
+  }
+
+  @include max-mobile {
+    grid-template-columns: minmax(270px, 370px);
+    grid-template-rows: minmax(386px, 1fr);
+  }
+
+  &:not(:last-child) {
+    @include max-mobile {
+      margin-bottom: 30px;
     }
   }
 
-  & article:focus-within {
+  &:hover article,
+  &:active article {
     z-index: 1;
   }
+}
 
-  & h3 {
-    margin-top: 0;
-    margin-bottom: 3px;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 27px;
+.catalog figure {
+  position: relative;
+  margin: 0;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+}
+
+.catalog img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.catalog figcaption {
+  position: absolute;
+  max-width: 260px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+  color: $color-alice-blue;
+
+  @include desktop-only {
+    bottom: 23px;
+    left: 30px;
+    right: 30px;
   }
 
-  & dl {
-    margin: 0 0 4px 0;
-    font-size: 14px;
-    line-height: 20px;
-    font-weight: 500;
+  @include max-tablet {
+    bottom: 28px;
+    left: 35px;
+    right: 35px;
   }
 
-  & dt {
-    margin-bottom: 1px;
+  @include max-mobile {
+    bottom: 19px;
+    left: 25px;
+    right: 25px;
+  }
+}
+
+.catalog article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  grid-column: 1 / -1;
+  grid-row: 1 / -1;
+  background-color: $color-tangaroa;
+  color: $color-alice-blue;
+  height: 100%;
+
+  @include desktop-only {
+    padding: 27px 25px 35px 25px;
   }
 
-  & dd {
-    margin: 0 0 11px 0;
-    color: $color-quartz;
+  @include max-tablet {
+    padding: 28px 35px 35px 35px;
   }
 
-  & a {
-    display: block;
-    width: 100%;
-    padding: 9.5px 5px;
-    color: $color-tangaroa;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 21px;
-    text-align: center;
-    background-color: $color-alice-blue;
-    z-index: -1;
+  @include max-mobile {
+    padding: 27px 25px 36px 25px;
+  }
+
+  &:focus-within {
+    z-index: 1;
+  }
+}
+
+.catalog h3 {
+  margin-top: 0;
+  margin-bottom: 3px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+
+  @include desktop-only {
+    margin-bottom: 4px;
+  }
+}
+
+.catalog dl {
+  margin: 0 0 4px 0;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+
+  @include max-tablet {
+    margin: 0;
+  }
+}
+
+.catalog dt {
+  margin-bottom: 1px;
+
+  @include desktop-only {
+    margin-bottom: 2px;
+  }
+}
+
+.catalog dd {
+  margin: 0 0 11px 0;
+  color: $color-quartz;
+
+  @include desktop-only {
+    margin-bottom: 10px;
   }
 }

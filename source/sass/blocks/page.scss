@@ -1,6 +1,24 @@
 .page__body {
   display: flex;
   flex-direction: column;
+  position: relative;
+
+  &--substrate::after {
+    display: none;
+  }
+
+  @include max-mobile {
+    &--substrate::after {
+      display: block;
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      background: rgba(0, 43, 102, 0.5);
+      width: 100%;
+      height: 100%;
+    }
+  }
 }
 
 .page__main {

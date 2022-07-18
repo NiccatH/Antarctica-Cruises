@@ -1,0 +1,38 @@
+.map {
+  width: 100%;
+
+  &--nojs img {
+    display: block;
+  }
+
+  &--js img {
+    display: none;
+  }
+
+  &--nojs iframe {
+    display: none;
+  }
+
+  @include desktop-only {
+    height: 306px;
+  }
+
+  @include max-tablet {
+    height: 335px;
+  }
+
+  @include max-mobile {
+    height: 316px;
+    order: 1;
+  }
+}
+
+.map img {
+  width: 100%;
+  height: 100%;
+}
+
+.map iframe {
+  width: 100%;
+  height: 100%;
+}

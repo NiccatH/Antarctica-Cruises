@@ -1,102 +1,211 @@
 .main-nav {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  z-index: 1;
-
   &--opened .main-nav__wrapper {
-    background-color: $color-tangaroa;
-
-    @include mobile-only {
+    @include max-mobile {
       position: absolute;
+      top: 0;
       right: 0;
+      height: 100%;
       width: 89.1%;
-      padding: 20px 15px;
+      padding: 16px 6px 16px 15px;
       background-color: $color-alice-blue;
       z-index: 1;
     }
   }
 
-  &--opened .main-nav__list {
-    @include mobile-only {
-      display: block;
+  &--nojs .main-nav__wrapper {
+    @include max-mobile {
+      position: relative;
+      background-color: $color-alice-blue;
     }
   }
 
-  &--opened .main-nav__icon {
-    @include mobile-only {
+  &--opened .main-nav__link,
+  &--nojs .main-nav__link {
+    @include max-mobile {
+      margin-bottom: 25px;
+    }
+  }
+
+  &--opened .main-nav__icon,
+  &--nojs .main-nav__icon {
+    @include max-mobile {
       fill: $color-tangaroa;
     }
   }
 
+  &--closed .main-nav__list {
+    @include max-mobile {
+      display: none;
+    }
+  }
+
+  &--opened .main-nav__list,
+  &--nojs .main-nav__list {
+    @include max-mobile {
+      display: flex;
+    }
+  }
+
   &--opened .main-nav__toggle {
-    @include mobile-only {
-      top: 21px;
-      right: 15px;
-      background-image: url("../../img/svg/cross-icon.svg");
-      background-size: 13px 13px;
+    right: 6px;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 14px;
+      right: 7.5px;
+      width: 17px;
+      height: 2px;
+      background-color: $color-tangaroa;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 0 2px $color-tangaroa;
+    }
+
+    &:active {
+      background-color: $background-solitude;
     }
   }
 
   &--closed .main-nav__toggle {
-    @include mobile-only {
-      background-image: url("../../img/svg/burger-icon.svg");
-      background-size: 24px 12px;
+    right: 6px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 8px;
+      width: 24px;
+      height: 2px;
+      background-color: $color-alice-blue;
+      box-shadow: 0 6px 0 0 $color-alice-blue, 0 12px 0 0 $color-alice-blue;
     }
+
+    &:hover::after,
+    &:focus::after {
+      background-color: $color-tangaroa;
+      box-shadow: 0 6px 0 0 $color-tangaroa, 0 12px 0 0 $color-tangaroa;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $color-alice-blue;
+      box-shadow: 0 0 0 2px $color-tangaroa;
+    }
+
+    &:active {
+      background-color: $background-solitude;
+    }
+  }
+
+  &--nojs .main-nav__toggle {
+    display: none;
   }
 }
 
 .main-nav__wrapper {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  max-width: 1366px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+
   @include desktop-only {
-    padding-top: 35px;
-    padding-bottom: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 31px 99px 31px 103px;
   }
 
-  @include tablet-only {
-    padding-top: 30px;
-    padding-bottom: 30px;
+  @include max-tablet {
+    padding: 17px 40px 17px 45px;
   }
 
-  @include mobile-only {
-    padding-top: 20px;
-    padding-bottom: 20px;
+  @include max-mobile {
+    padding: 16px 6px 16px 15px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
   }
 }
 
 .main-nav__list {
-  @include tablet-only {
+  @include max-tablet {
     font-size: 14px;
     line-height: 17px;
   }
 
-  @include mobile-only {
-    display: none;
+  @include max-mobile {
+    display: flex;
+    padding-left: 5px;
     font-size: 18px;
     line-height: 22px;
   }
+}
 
-  & a {
-    @include mobile-only {
-      color: $color-tangaroa;
+.main-nav__list li {
+  &:not(:last-child) {
+    margin-right: 23px;
+
+    @include max-tablet {
+      margin-right: 14px;
     }
+
+    @include max-mobile {
+      margin-right: 0;
+    }
+  }
+}
+
+.main-nav__list a {
+  padding: 14px 5px;
+
+  @include max-mobile {
+    color: $color-tangaroa;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $color-alice-blue;
+    color: $color-tangaroa;
+    box-shadow: 0 0 0 2px $color-tangaroa;
+  }
+
+  &:active {
+    background-color: $background-solitude;
   }
 }
 
 .main-nav__toggle {
   display: none;
-  width: 70px;
-  height: 22px;
+  width: 42px;
+  height: 30px;
   padding: 0;
   margin-left: auto;
   border: none;
+  border-radius: 10px;
   background-color: transparent;
   cursor: pointer;
   background-repeat: no-repeat;
   background-position: right center;
 
-  @include mobile-only {
-    display: block;
+  @include max-mobile {
     position: absolute;
-    right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

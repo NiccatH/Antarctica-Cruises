@@ -2,20 +2,51 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 
-  & svg {
+  @include max-tablet {
+    padding-top: 12.5px;
+    padding-bottom: 12.5px;
+  }
+
+  @include max-mobile {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $color-alice-blue;
+    box-shadow: 0 0 0 2px $color-tangaroa;
+  }
+
+  &:hover svg,
+  &:focus svg {
+    fill: $color-tangaroa;
+  }
+
+  &:active {
+    background-color: $background-solitude;
+  }
+}
+
+.logo svg {
+  fill: $color-alice-blue;
+
+  @include desktop-only {
     width: 70px;
     height: 38px;
-    fill: $color-alice-blue;
+  }
 
-    @include tablet-only {
-      width: 38px;
-      height: 20px;
-    }
+  @include max-tablet {
+    width: 38px;
+    height: 20px;
+  }
 
-    @include mobile-only {
-      width: 42px;
-      height: 22px;
-    }
+  @include max-mobile {
+    width: 42px;
+    height: 22px;
   }
 }

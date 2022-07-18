@@ -11,7 +11,7 @@
     }
   }
 
-  @include tablet-only {
+  @include max-tablet {
     background-image: url("../img/advantages-bg-tablet.jpg");
 
     @media (min-resolution: 2dppx) {
@@ -19,89 +19,128 @@
     }
   }
 
-  @include mobile-only {
+  @include max-mobile {
     background-image: url("../img/advantages-bg-mobile.jpg");
 
     @media (min-resolution: 2dppx) {
       background-image: url("../img/advantages-bg-mobile@2x.jpg");
     }
   }
+}
 
-  & h2 {
-    margin-top: 0;
-    margin-bottom: 60px;
-    font-weight: 600;
+.advantages h2 {
+  margin-top: 0;
+  font-weight: 600;
+  text-align: center;
+
+  @include desktop-only {
+    margin-bottom: 50px;
     font-size: 28px;
     line-height: 42px;
-    text-align: center;
-
-    @include tablet-only {
-      font-size: 26px;
-      line-height: 39px;
-    }
-
-    @include mobile-only {
-      font-size: 24px;
-      line-height: 36px;
-    }
   }
 
-  & ul {
-    @include list-style-none;
-
-    @include desktop-only {
-      gap: 40px;
-    }
-
-    @include from-tablet-to-max {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    @include tablet-only {
-      gap: 30px;
-    }
-
-    @include mobile-only {
-      display: flex;
-      flex-direction: column;
-    }
+  @include max-tablet {
+    margin-bottom: 48px;
+    font-size: 26px;
+    line-height: 39px;
   }
 
+  @include max-mobile {
+    margin-bottom: 30px;
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
 
-  & li {
-    padding: 30px 30px 50px 30px;
-    background-color: $color-alice-blue;
+.advantages ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 
-    @include tablet-only {
-      padding: 25px 20px 25px 20px;
-    }
-
-    @include mobile-only {
-      padding-right: 15px;
-    }
+  @include desktop-only {
+    gap: 40px;
   }
 
-  & svg {
-    display: block;
-    margin-bottom: 25px;
+  @include max-tablet {
+    gap: 30px;
   }
 
-  & h3 {
-    margin-top: 0;
-    margin-bottom: 20px;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 27px;
+  @include max-mobile {
+    display: flex;
+    flex-direction: column;
+    gap: unset;
+  }
+}
 
-    @include tablet-only {
-      line-height: 25px;
+
+.advantages li {
+  background-color: $color-alice-blue;
+
+  @include desktop-only {
+    padding: 30px 30px 20px 30px;
+  }
+
+  @include max-tablet {
+    padding: 23px 11px 10px 19px;
+  }
+
+  @include max-mobile {
+    padding: 23px 20px 19px 20px;
+  }
+
+  &:not(:last-child) {
+    @include max-mobile {
+      margin-bottom: 30px;
     }
   }
+}
 
-  & p {
-    margin: 0;
-    font-size: 14px;
-    line-height: 20px;
+.advantages svg {
+  display: block;
+  margin-bottom: 18px;
+
+  @include max-tablet {
+    transform: scale(0.8);
+  }
+
+  @include max-mobile {
+    margin-bottom: 16px;
+    transform: scale(0.8);
+  }
+}
+
+.advantages h3 {
+  margin-top: 0;
+  margin-bottom: 9px;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 27px;
+
+  @include max-tablet {
+    line-height: 25px;
+  }
+
+  @include max-mobile {
+    margin-right: 50px;
+  }
+}
+
+.advantages p {
+  margin-top: 0;
+  font-size: 14px;
+  line-height: 20px;
+
+  @include desktop-only {
+    margin-bottom: 5px;
+  }
+
+  @include max-tablet {
+    margin-bottom: 10px;
+  }
+
+  @include max-mobile {
+    margin-bottom: 0;
   }
 }

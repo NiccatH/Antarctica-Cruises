@@ -1,13 +1,54 @@
 .section-wrapper {
   max-width: 1366px;
   margin: 0 auto;
-  padding: 120px 103px;
 
-  @include tablet-only {
-    padding: 100px 45px;
+  @include desktop-only {
+    padding: 110px 103px 120px 103px;
   }
 
-  @include mobile-only {
-    padding: 65px 15px;
+  @include max-tablet {
+    padding: 90px 45px 100px 45px;
+  }
+
+  @include max-mobile {
+    padding: 57px 15px 65px 15px;
+  }
+
+  &--welcome {
+    @include desktop-only {
+      padding: 270px 198px 277px 198px;
+    }
+
+    @include max-tablet {
+      padding-top: 267px;
+      padding-bottom: 266px;
+    }
+
+    @include max-mobile {
+      padding-top: 175px;
+      padding-bottom: 175px;
+    }
+  }
+
+  &--info {
+    @include max-tablet {
+      padding-bottom: 94px;
+    }
+  }
+
+  &--booking {
+    @include desktop-only {
+      padding: 50px 163px;
+    }
+
+    @include max-tablet {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    @include max-mobile {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
   }
 }

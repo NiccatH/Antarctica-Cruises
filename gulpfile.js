@@ -55,7 +55,7 @@ const svgo = () => {
 const sprite = () => {
   return gulp.src('source/img/sprite/*.svg')
       .pipe(svgstore({inlineSvg: true}))
-      .pipe(rename('sprite_auto.svg'))
+      .pipe(rename('sprite-auto.svg'))
       .pipe(gulp.dest('build/img'));
 };
 
@@ -88,7 +88,7 @@ const clean = () => {
 const syncServer = () => {
   server.init({
     server: 'build/',
-    index: 'sitemap.html',
+    index: 'index.html',
     notify: false,
     open: true,
     cors: true,

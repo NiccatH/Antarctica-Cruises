@@ -1,8 +1,74 @@
 .social {
-  @include list-style-none;
-  min-width: 87px;
+  list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 7px;
+
+  @include desktop-only {
+    gap: 5px 7px;
+    min-width: 87px;
+  }
+}
+
+.social__link {
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  border-radius: 10px;
+
+  @include desktop-only {
+    width: 40px;
+    height: 48px;
+  }
+
+  @include max-tablet {
+    width: 30px;
+    height: 45px;
+  }
+
+  @include max-mobile {
+    height: 36px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $color-alice-blue;
+    box-shadow: 0 0 0 2px $color-tangaroa;
+  }
+
+  &:hover svg,
+  &:focus svg {
+    fill: $color-tangaroa;
+  }
+
+  &:active {
+    background-color: $background-solitude;
+  }
+}
+
+.social__icon {
+  fill: $color-alice-blue;
+
+  &--facebook {
+    @include max-tablet {
+      width: 9px;
+      height: 16px;
+    }
+  }
+
+  &--instagram {
+    @include max-tablet {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &--twitter {
+    @include max-tablet {
+      width: 16px;
+      height: 13px;
+    }
+  }
 }
