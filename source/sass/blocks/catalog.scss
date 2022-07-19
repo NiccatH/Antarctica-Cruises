@@ -53,19 +53,10 @@
 
 .catalog li {
   display: grid;
-  margin-left: auto;
-  margin-right: auto;
-
-  @include desktop-only {
-    grid-template-columns: minmax(260px, 1fr);
-  }
-
-  @include max-tablet {
-    grid-template-columns: minmax(309px, 409px);
-  }
+  grid-template-columns: 1fr;
 
   @include max-mobile {
-    grid-template-columns: minmax(270px, 370px);
+    grid-template-columns: minmax(270px, 1fr);
     grid-template-rows: minmax(386px, 1fr);
   }
 
@@ -75,8 +66,7 @@
     }
   }
 
-  &:hover article,
-  &:active article {
+  &:hover article {
     z-index: 1;
   }
 }
@@ -124,7 +114,6 @@
 .catalog article {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   grid-column: 1 / -1;
   grid-row: 1 / -1;
   background-color: $color-tangaroa;
@@ -132,7 +121,7 @@
   height: 100%;
 
   @include desktop-only {
-    padding: 27px 25px 35px 25px;
+    padding: 29px 25px 35px 25px;
   }
 
   @include max-tablet {
@@ -140,7 +129,7 @@
   }
 
   @include max-mobile {
-    padding: 27px 25px 36px 25px;
+    padding: 29px 25px 36px 25px;
   }
 
   &:focus-within {
@@ -150,24 +139,29 @@
 
 .catalog h3 {
   margin-top: 0;
-  margin-bottom: 3px;
+  margin-bottom: 14px;
   font-weight: 500;
   font-size: 18px;
   line-height: 27px;
-
-  @include desktop-only {
-    margin-bottom: 4px;
-  }
 }
 
 .catalog dl {
+  overflow-y: auto;
   margin: 0 0 4px 0;
   font-size: 14px;
   line-height: 20px;
   font-weight: 500;
 
+  @include desktop-only {
+    max-height: 239px;
+  }
+
   @include max-tablet {
-    margin: 0;
+    max-height: 238px;
+  }
+
+  @include max-mobile {
+    max-height: 235px;
   }
 }
 
@@ -181,9 +175,14 @@
 
 .catalog dd {
   margin: 0 0 11px 0;
+  font-weight: 400;
   color: $color-quartz;
 
   @include desktop-only {
     margin-bottom: 10px;
   }
+}
+
+.catalog a {
+  margin-top: auto;
 }

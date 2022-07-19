@@ -68,9 +68,11 @@
       transform: rotate(-45deg);
     }
 
-    &:hover,
-    &:focus {
-      box-shadow: 0 0 0 2px $color-tangaroa;
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        box-shadow: 0 0 0 2px $color-tangaroa;
+      }
     }
 
     &:active {
@@ -91,16 +93,18 @@
       box-shadow: 0 6px 0 0 $color-alice-blue, 0 12px 0 0 $color-alice-blue;
     }
 
-    &:hover::after,
-    &:focus::after {
-      background-color: $color-tangaroa;
-      box-shadow: 0 6px 0 0 $color-tangaroa, 0 12px 0 0 $color-tangaroa;
-    }
+    @media (hover: hover), screen and (min-width: 0\0) {
+      &:hover,
+      &:focus {
+        background-color: $color-alice-blue;
+        box-shadow: 0 0 0 2px $color-tangaroa;
+      }
 
-    &:hover,
-    &:focus {
-      background-color: $color-alice-blue;
-      box-shadow: 0 0 0 2px $color-tangaroa;
+      &:hover::after,
+      &:focus::after {
+        background-color: $color-tangaroa;
+        box-shadow: 0 6px 0 0 $color-tangaroa, 0 12px 0 0 $color-tangaroa;
+      }
     }
 
     &:active {
@@ -177,15 +181,17 @@
     color: $color-tangaroa;
   }
 
-  &:hover,
-  &:focus {
-    background-color: $color-alice-blue;
-    color: $color-tangaroa;
-    box-shadow: 0 0 0 2px $color-tangaroa;
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+      background-color: $color-alice-blue;
+      color: $color-tangaroa;
+      box-shadow: 0 0 0 2px $color-tangaroa;
+    }
   }
 
   &:active {
-    background-color: $background-solitude;
+    opacity: 0.7;
   }
 }
 

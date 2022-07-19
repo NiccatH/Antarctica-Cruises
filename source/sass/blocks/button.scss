@@ -14,7 +14,7 @@
 
   &--lower {
     padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 8px;
   }
 
   &--higher {
@@ -22,15 +22,16 @@
     padding-bottom: 12px;
   }
 
-  &:hover,
-  &:focus {
-    background-color: $background-solitude;
-    color: $color-tangaroa;
-    box-shadow: inset 0 0 0 2px $color-quartz;
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+      background-color: $background-solitude;
+      color: $color-tangaroa;
+      box-shadow: inset 0 0 0 2px $color-quartz;
+    }
   }
 
   &:active {
-    background-color: $background-solitude;
-    color: $color-alice-blue;
+    opacity: 0.7;
   }
 }

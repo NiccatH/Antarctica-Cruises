@@ -66,15 +66,17 @@
     padding-bottom: 5px;
   }
 
-  &:hover,
-  &:focus {
-    background-color: $color-alice-blue;
-    color: $color-tangaroa;
-    box-shadow: 0 0 0 2px $color-quartz;
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+      background-color: $color-alice-blue;
+      color: $color-tangaroa;
+      box-shadow: 0 0 0 2px $color-quartz;
+    }
   }
 
   &:active {
-    background-color: $background-solitude;
+    opacity: 0.7;
   }
 }
 

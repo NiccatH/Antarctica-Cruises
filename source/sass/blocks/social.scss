@@ -32,19 +32,21 @@
     padding-right: 5px;
   }
 
-  &:hover,
-  &:focus {
-    background-color: $color-alice-blue;
-    box-shadow: 0 0 0 2px $color-tangaroa;
-  }
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover,
+    &:focus {
+      background-color: $color-alice-blue;
+      box-shadow: 0 0 0 2px $color-tangaroa;
+    }
 
-  &:hover svg,
-  &:focus svg {
-    fill: $color-tangaroa;
+    &:hover svg,
+    &:focus svg {
+      fill: $color-tangaroa;
+    }
   }
 
   &:active {
-    background-color: $background-solitude;
+    opacity: 0.7;
   }
 }
 

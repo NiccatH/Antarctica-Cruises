@@ -15,7 +15,7 @@
   }
 
   @include max-mobile {
-    margin-bottom: 30px;
+    margin-bottom: 29px;
     line-height: 25px;
     text-align: center;
   }
@@ -26,7 +26,7 @@
   padding: 43px 50px 50px 50px;
 
   @include max-mobile {
-    padding: 33px 30px 40px 30px;
+    padding: 36px 30px 40px 30px;
   }
 }
 
@@ -89,15 +89,17 @@
     transform: translate(-50%, -50%);
   }
 
-  &:hover + span {
-    background-color: $background-solitude;
-    box-shadow: 0 0 0 2px $color-alice-blue;
-  }
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &:hover + span {
+      background-color: $background-solitude;
+      box-shadow: 0 0 0 2px $color-alice-blue;
+    }
 
-  &:focus + span {
-    background-color: $background-solitude;
-    box-shadow: 0 0 0 2px $color-alice-blue;
-    outline: auto;
+    &:focus + span {
+      background-color: $background-solitude;
+      box-shadow: 0 0 0 2px $color-alice-blue;
+      outline: auto;
+    }
   }
 }
 
