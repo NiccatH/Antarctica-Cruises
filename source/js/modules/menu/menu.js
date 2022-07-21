@@ -10,12 +10,20 @@ const operateMenu = () => {
     navMain.classList.remove('main-nav--closed');
     navMain.classList.add('main-nav--opened');
     navigationBackground.classList.add('page__body--substrate');
+    navigationBackground.classList.add('page__body--fixed-position');
   };
 
   const close = () => {
     navMain.classList.add('main-nav--closed');
     navMain.classList.remove('main-nav--opened');
     navigationBackground.classList.remove('page__body--substrate');
+    navigationBackground.classList.remove('page__body--fixed-position');
+  };
+
+  const onOverlayClick = (evt) => {
+    if (evt.target === navigationBackground) {
+      close();
+    }
   };
 
   const onMenuToggleClick = () => {
@@ -26,12 +34,14 @@ const operateMenu = () => {
       navLinks.forEach((link) => {
         link.addEventListener('click', close);
       });
+      navigationBackground.addEventListener('click', onOverlayClick);
     }
     if (isOpened) {
       close();
       navLinks.forEach((link) => {
         link.removeEventListener('click', close);
       });
+      navigationBackground.removeEventListener('click', onOverlayClick);
     }
   };
 

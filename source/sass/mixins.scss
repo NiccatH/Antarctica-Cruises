@@ -1,13 +1,19 @@
 // Desktop first
 
-@mixin desktop-only {
+@mixin vp-1366 {
   @media (min-width: $vp-1366) {
     @content;
   }
 }
 
+@mixin desktop-only {
+  @media (min-width: $vp-1024) {
+    @content;
+  }
+}
+
 @mixin max-tablet {
-  @media (max-width: $vp-1365) {
+  @media (max-width: $vp-1023) {
     @content;
   }
 }

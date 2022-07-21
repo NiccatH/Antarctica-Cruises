@@ -39,13 +39,26 @@
   object-fit: cover;
   width: 100%;
   height: 100%;
+
+  @include max-tablet {
+    padding-top: 10px;
+    padding-bottom: 5px;
+  }
+
+  @include max-mobile {
+    padding: 0;
+  }
 }
 
 .info__wrapper {
   display: grid;
 
-  @include desktop-only {
+  @include vp-1366 {
     grid-template-columns: 1fr 560px;
+  }
+
+  @include desktop-only {
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: minmax(301px, 1fr);
     column-gap: 40px;
     row-gap: 30px;

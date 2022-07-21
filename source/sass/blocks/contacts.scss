@@ -21,6 +21,9 @@
   margin: 0;
   padding: 0;
   list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 
   @include max-tablet {
     padding-top: 10px;
@@ -72,7 +75,7 @@
 
 
       @include desktop-only {
-        box-shadow: 0 -5px 0 5px $background-solitude;
+        box-shadow: 0 0 0 1px $background-solitude;
       }
 
       @include max-tablet {
@@ -110,8 +113,12 @@
 .contacts__wrapper {
   display: grid;
 
-  @include desktop-only {
+  @include vp-1366 {
     grid-template-columns: 560px 1fr;
+  }
+
+  @include desktop-only {
+    grid-template-columns: 1fr 1fr;
     gap: 100px;
   }
 

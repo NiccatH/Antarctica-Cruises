@@ -57,6 +57,10 @@
   font-size: 18px;
   line-height: 27px;
 
+  @include vp-1366 {
+    margin-right: 180px;
+  }
+
   @include desktop-only {
     margin-bottom: 10px;
   }
@@ -73,9 +77,13 @@
 }
 
 .booking__wrapper {
+  @include vp-1366 {
+    grid-template-columns: 1fr 403px;
+  }
+
   @include desktop-only {
     display: grid;
-    grid-template-columns: 1fr 403px;
+    grid-template-columns: 1fr 1fr;
     column-gap: 70px;
     row-gap: 30px;
   }
