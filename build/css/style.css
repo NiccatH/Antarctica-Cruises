@@ -1029,11 +1029,16 @@ button,
 }
 
 .catalog dl {
+  scrollbar-width: none;
   overflow-y: auto;
   margin: 0 0 4px 0;
   font-size: 14px;
   line-height: 20px;
   font-weight: 500;
+}
+
+.catalog dl::-webkit-scrollbar {
+  width: 0;
 }
 
 .catalog dt {
