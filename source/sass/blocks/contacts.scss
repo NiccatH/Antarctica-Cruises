@@ -9,7 +9,7 @@
   }
 
   @include max-tablet {
-    margin-bottom: 20px;
+    margin-bottom: 14px;
   }
 
   @include max-mobile {
@@ -137,10 +137,6 @@
 .contacts__map {
   margin-top: 10px;
 
-  @include desktop-only {
-    align-self: center;
-  }
-
   @include max-mobile {
     margin: 0;
   }
@@ -154,11 +150,11 @@
   align-self: center;
 
   @include desktop-only {
-    margin-top: 20px;
+    margin-top: 26px;
   }
 
   @include max-tablet {
-    margin-top: 27px;
+    margin-top: 29px;
   }
 
   @include max-mobile {

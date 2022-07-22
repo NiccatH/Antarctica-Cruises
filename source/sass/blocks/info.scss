@@ -39,6 +39,7 @@
   object-fit: cover;
   width: 100%;
   height: 100%;
+  max-height: 301px;
 
   @include max-tablet {
     padding-top: 10px;
@@ -46,6 +47,7 @@
   }
 
   @include max-mobile {
+    max-height: 100%;
     padding: 0;
   }
 }

@@ -9,8 +9,12 @@
   max-width: 1366px;
   margin: 0 auto;
 
+  @include vp-1366 {
+    padding: 48px 93px 41px 103px;
+  }
+
   @include desktop-only {
-    padding: 45px 93px 45px 103px;
+    padding: 45px 93px 45px 100px;
   }
 
   @include max-tablet {
@@ -18,7 +22,7 @@
   }
 
   @include max-mobile {
-    padding: 36px 15px 28px 10px;
+    padding: 36px 15px 31px 10px;
     justify-content: flex-end;
   }
 }
@@ -26,13 +30,11 @@
 .page-footer__content-wrapper {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
+  align-items: flex-start;
 
   @include max-mobile {
     max-width: 294px;
     flex-direction: column;
-    align-items: flex-start;
   }
 }
 
@@ -45,36 +47,21 @@
   @include max-mobile {
     flex-direction: column;
     align-items: flex-start;
-    margin-bottom: 11px;
-  }
-}
-
-.page-footer__list li {
-  &:not(:last-child) {
-    margin-right: 23px;
-
-    @include max-tablet {
-      margin-right: 14px;
-    }
-
-    @include max-mobile {
-      margin-bottom: 7px;
-      margin-right: 0;
-    }
+    margin-bottom: 9px;
   }
 }
 
 .page-footer__list a {
-  padding: 14px 5px;
+  @include desktop-only {
+    padding: 14px 17px 14px 16px;
+  }
 
   @include max-tablet {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding: 15px 12px;
   }
 
   @include max-mobile {
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding: 8px 5px 9px 5px;
   }
 
   @media (hover: hover), screen and (min-width: 0\0) {
@@ -95,21 +82,22 @@
   margin-right: 35px;
 
   @include vp-1366 {
-    margin-right: 35px;
+    margin-right: 25px;
   }
 
   @include desktop-only {
-    margin-right: 13px;
+    margin-right: 3px;
   }
 
   @include max-tablet {
-    margin-right: 20px;
+    margin-right: 13px;
   }
 
   @include max-mobile {
     width: 100%;
     justify-content: flex-start;
-    margin-bottom: 19px;
+    margin-bottom: 14px;
+    margin-right: 0;
     padding-left: 5px;
     padding-right: 5px;
   }

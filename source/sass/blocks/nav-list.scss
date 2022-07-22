@@ -5,26 +5,12 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
   font-weight: 500;
   font-size: 16px;
   line-height: 20px;
 
-  @include vp-1366 {
-    max-width: 900px;
-  }
-
-  @include desktop-only {
-    max-width: 605px;
-  }
-
-  @include max-tablet {
-    max-width: 520px;
-  }
-
   @include max-mobile {
     width: 100%;
-    max-width: 100%;
     display: flex;
   }
 }

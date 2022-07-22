@@ -126,7 +126,12 @@
   color: $color-alice-blue;
   height: 100%;
 
+  @include vp-1366 {
+    min-height: 386px;
+  }
+
   @include desktop-only {
+    min-height: 406px;
     padding: 29px 25px 35px 25px;
   }
 
@@ -158,8 +163,12 @@
   line-height: 20px;
   font-weight: 500;
 
-  @include desktop-only {
+  @include vp-1366 {
     max-height: 239px;
+  }
+
+  @include desktop-only {
+    max-height: 258px;
   }
 
   @include max-tablet {
@@ -167,7 +176,7 @@
   }
 
   @include max-mobile {
-    max-height: 235px;
+    max-height: 237px;
   }
 }
 
@@ -180,12 +189,22 @@
 }
 
 .catalog dd {
-  margin: 0 0 11px 0;
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
   font-weight: 400;
   color: $color-quartz;
 
   @include desktop-only {
-    margin-bottom: 10px;
+    &:not(:last-of-type) {
+      margin-bottom: 10px;
+    }
+  }
+
+  @include max-tablet {
+    &:not(:last-of-type) {
+      margin-bottom: 11px;
+    }
   }
 }
 
